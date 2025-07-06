@@ -1,11 +1,9 @@
-import { useState } from 'react'
 import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { Landing } from './screens/landing'
-import {Game}  from "./screens/Game"
-function App() {
-  const [count, setCount] = useState(0)
+import { Landing } from './screens/Landing'
+import { Game } from "./screens/Game"
 
+function App() {
   return (
     <>
     <div className='h-screen bg-slate-950'>

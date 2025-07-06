@@ -1,4 +1,4 @@
-import { SQUARES, type Color, type PieceSymbol, type Square } from "chess.js";
+import { type Color, type PieceSymbol, type Square } from "chess.js";
 import { useState } from "react";
 import { MOVE } from "../screens/Game";
 
@@ -19,7 +19,6 @@ export const ChessBoard = ({
   onPieceSelect?: (square: string) => void;
 }) => {
   const [from , setFrom] =useState<null | Square >(null);
-  const [to, setTo] = useState<null | Square >(null);
 
   const getPieceImage = (piece: { type: PieceSymbol; color: Color }) => {
     const color = piece.color === 'w' ? 'w' : 'b';
@@ -65,11 +64,9 @@ export const ChessBoard = ({
         }));
         // Reset selection after making move
         setFrom(null);
-        setTo(null);
       } else {
         // Clicking the same square - deselect
         setFrom(null);
-        setTo(null);
       }
     }
   };
@@ -89,7 +86,6 @@ export const ChessBoard = ({
       {board.map((row, i) => (
         <div key={i} className="flex">
           {row.map((piece, j) => {
-            const squareName = String.fromCharCode(97 + j) + (8 - i) as Square;
             const selected = isSelected(i, j);
             const validMove = isValidMove(i, j);
             
