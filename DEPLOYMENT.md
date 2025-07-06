@@ -112,6 +112,8 @@ This guide will help you deploy your chess game online. You have several options
 
 ## 🔧 Environment Variables
 
+**📖 For detailed environment variables setup, see [ENVIRONMENT_VARIABLES.md](./ENVIRONMENT_VARIABLES.md)**
+
 ### Frontend (.env file in frontend directory)
 ```env
 VITE_WS_URL=wss://your-backend-url.com
@@ -122,6 +124,19 @@ VITE_WS_URL=wss://your-backend-url.com
 NODE_ENV=production
 PORT=8080
 ```
+
+### Quick Environment Variables Setup
+
+1. **After deploying backend**, get your backend URL
+2. **In your frontend deployment platform** (Vercel/Netlify/Render):
+   - Go to Environment Variables settings
+   - Add: `VITE_WS_URL = wss://your-backend-url.com`
+   - Redeploy your frontend
+
+3. **In your backend deployment platform** (Railway/Render/Heroku):
+   - Go to Environment Variables settings
+   - Add: `NODE_ENV = production`
+   - Add: `PORT = 8080` (or let platform set it automatically)
 
 ## 📝 Pre-deployment Checklist
 
